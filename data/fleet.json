@@ -1,0 +1,47 @@
+[
+  {
+    "id": "s-class",
+    "name": "Mercedes S-Class",
+    "category": "Sedan",
+    "passengers": 3,
+    "luggage": 2,
+    "image": "assets/img/fleet/s-class.jpg",
+    "description": "Ultimate luxury sedan for business and VIP transfers."
+  },
+  {
+    "id": "maybach",
+    "name": "Mercedes S-Class Maybach",
+    "category": "Sedan",
+    "passengers": 3,
+    "luggage": 2,
+    "image": "assets/img/fleet/maybach.jpg",
+    "description": "Ultra-premium comfort for high-end clients."
+  },
+  {
+    "id": "e-class",
+    "name": "Mercedes E-Class",
+    "category": "Sedan",
+    "passengers": 3,
+    "luggage": 2,
+    "image": "assets/img/fleet/e-class.jpg",
+    "description": "Business-class comfort for everyday transfers."
+  },
+  {
+    "id": "v-class",
+    "name": "Mercedes V-Class",
+    "category": "Van",
+    "passengers": 7,
+    "luggage": 7,
+    "image": "assets/img/fleet/v-class.jpg",
+    "description": "Spacious VIP van for families and groups."
+  },
+  {
+    "id": "sprinter",
+    "name": "Mercedes Sprinter VIP",
+    "category": "Van",
+    "passengers": 16,
+    "luggage": 16,
+    "image": "assets/img/fleet/sprinter.jpg",
+    "description": "Luxury minibus for events and large groups."
+  }
+]
