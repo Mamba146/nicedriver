@@ -1,0 +1,116 @@
+/* ============================
+   RESPONSIVE.CSS — CLEAN VERSION
+   ============================ */
+
+/* MOBILE NAVIGATION */
+@media (max-width: 768px) {
+
+  /* BURGER BUTTON */
+  .burger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1000;
+  }
+
+  .burger span {
+    width: 26px;
+    height: 3px;
+    background: var(--gold);
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+
+  .burger.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+  }
+
+  .burger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .burger.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+  }
+
+  /* MOBILE MENU */
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: rgba(5,5,9,0.98);
+    padding: 80px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: 0.3s ease;
+    z-index: 999;
+  }
+
+  .nav.active {
+    right: 0;
+  }
+
+  .nav a {
+    color: var(--gold);
+    font-size: 18px;
+  }
+
+  /* HEADER FIX */
+  .header-inner {
+    gap: 12px;
+  }
+
+  /* HERO */
+  .hero-title {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+/* ============================
+   GRID ADAPTATION
+   ============================ */
+
+@media (max-width: 900px) {
+  .fleet-grid,
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .fleet-grid,
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-grid {
+    gap: 24px;
+  }
+
+  .contact-info h3 {
+    font-size: 18px;
+  }
+
+  .contact-form textarea {
+    min-height: 140px;
+  }
+}
