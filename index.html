@@ -28,232 +28,384 @@
     "openingHours": "Mo-Su 00:00-23:59"
   }
   </script>
+
+  <!-- GOOGLE MAPS -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOi8kl0N3Y48WjSyaM8u-8FWYfLnktmwU&libraries=places&callback=initAutocomplete&language=en" async defer></script>
 </head>
 
 <body>
 
   <!-- HEADER -->
-  <header class="header">
-    <div class="container header-inner">
-      <div class="logo">LUX<span>DRIVE</span></div>
-      <nav class="nav">
-        <a href="#services">Services</a>
-        <a href="#fleet">Fleet</a>
-        <a href="about.html">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <div class="burger" id="burger">
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
-      <a href="#booking" class="btn btn-outline">Book now</a>
+<header class="header">
+  <div class="container header-inner">
+    <div class="logo">LUX<span>DRIVE</span></div>
+
+    <nav class="nav">
+      <a href="#services" data-i18n="menu_services">Services</a>
+      <a href="#fleet" data-i18n="menu_fleet">Fleet</a>
+      <a href="about.html" data-i18n="menu_about">About</a>
+      <a href="#contact" data-i18n="menu_contact">Contact</a>
+    </nav>
+
+    <!-- ⭐ ВОТ СЮДА ВСТАВЛЯЕМ ФЛАГИ -->
+    <div class="lang-switch">
+      <span class="lang-btn" onclick="setLang('en')">🇬🇧 EN</span>
+      <span class="lang-sep">|</span>
+      <span class="lang-btn" onclick="setLang('fr')">🇫🇷 FR</span>
     </div>
-  </header>
+    <!-- ⭐ КОНЕЦ БЛОКА -->
+
+    <div class="burger" id="burger">
+      <span></span><span></span><span></span>
+    </div>
+
+    <a href="#booking" class="btn btn-outline" data-i18n="book_now">Book now</a>
+  </div>
+</header>
+
 
   <!-- HERO -->
   <section class="hero-slider">
-    <div class="hero-slide active" style="background-image: url('assets/img/hero/hero1.jpg');"></div>
-    <div class="hero-slide" style="background-image: url('assets/img/hero/hero2.jpg');"></div>
-    <div class="hero-slide" style="background-image: url('assets/img/hero/hero3.jpg');"></div>
-    <div class="hero-slide" style="background-image: url('assets/img/hero/hero4.jpg');"></div>
-    <div class="hero-slide" style="background-image: url('assets/img/hero/hero5.jpg');"></div>
 
-    <div class="hero-content container">
-      <h1 class="hero-title gold-flash">Premium Chauffeur on the Côte d’Azur</h1>
-      <p class="hero-subtitle">
-        Discreet, punctual and luxurious transfers for your business and leisure.
-      </p>
+  <div class="hero-slide active" style="background-image: url('assets/img/hero/hero1.jpg');"></div>
+  <div class="hero-slide" style="background-image: url('assets/img/hero/hero2.jpg');"></div>
+  <div class="hero-slide" style="background-image: url('assets/img/hero/hero3.jpg');"></div>
+  <div class="hero-slide" style="background-image: url('assets/img/hero/hero4.jpg');"></div>
+  <div class="hero-slide" style="background-image: url('assets/img/hero/hero5.jpg');"></div>
 
-      <div class="hero-actions">
-        <a href="#booking" class="btn btn-primary">Book your ride</a>
-        <a href="#fleet" class="btn btn-secondary">View fleet</a>
-      </div>
+  <div class="hero-content container">
+    <h1 class="hero-title gold-flash" data-i18n="hero_title">
+      Premium Chauffeur on the Côte d’Azur
+    </h1>
+
+    <p class="hero-subtitle" data-i18n="hero_subtitle">
+      Discreet, punctual and luxurious transfers for your business and leisure.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#booking" class="btn btn-primary" data-i18n="hero_book">Book your ride</a>
+      <a href="#fleet" class="btn btn-secondary" data-i18n="hero_fleet">View fleet</a>
     </div>
-  </section>
+  </div>
+
+</section>
 
   <!-- SERVICES -->
   <section id="services" class="section section-dark">
-    <div class="container">
-      <h2 class="section-title">Our Services</h2>
+  <div class="container">
+    <h2 class="section-title" data-i18n="services_title">Our Services</h2>
 
-      <div class="services-grid">
+    <div class="services-grid">
 
-        <article class="service-item">
-          <div class="service-icon">✈️</div>
-          <h3>Airport Transfers</h3>
-          <p>Seamless and stress‑free transfers to all major airports on the Côte d’Azur.</p>
-        </article>
+      <article class="service-item">
+        <div class="service-icon">✈️</div>
+        <h3 data-i18n="service_airport_title">Airport Transfers</h3>
+        <p data-i18n="service_airport_desc">
+          Seamless and stress‑free transfers to all major airports on the Côte d’Azur.
+        </p>
+      </article>
 
-        <article class="service-item">
-          <div class="service-icon">💼</div>
-          <h3>Business Chauffeur</h3>
-          <p>Professional, discreet and punctual transportation for meetings and events.</p>
-        </article>
+      <article class="service-item">
+        <div class="service-icon">💼</div>
+        <h3 data-i18n="service_business_title">Business Chauffeur</h3>
+        <p data-i18n="service_business_desc">
+          Professional, discreet and punctual transportation for meetings and events.
+        </p>
+      </article>
 
-        <article class="service-item">
-          <div class="service-icon">💍</div>
-          <h3>Events & Weddings</h3>
-          <p>Elegant vehicles and experienced chauffeurs for special occasions.</p>
-        </article>
+      <article class="service-item">
+        <div class="service-icon">💍</div>
+        <h3 data-i18n="service_events_title">Events & Weddings</h3>
+        <p data-i18n="service_events_desc">
+          Elegant vehicles and experienced chauffeurs for special occasions.
+        </p>
+      </article>
 
-        <article class="service-item">
-          <div class="service-icon">🌴</div>
-          <h3>Private Tours</h3>
-          <p>Discover the French Riviera with a private driver.</p>
-        </article>
+      <article class="service-item">
+        <div class="service-icon">🌴</div>
+        <h3 data-i18n="service_tours_title">Private Tours</h3>
+        <p data-i18n="service_tours_desc">
+          Discover the French Riviera with a private driver.
+        </p>
+      </article>
 
-        <article class="service-item">
-          <div class="service-icon">⏱️</div>
-          <h3>Hourly Service</h3>
-          <p>Your personal chauffeur at disposal for as many hours as needed.</p>
-        </article>
+      <article class="service-item">
+        <div class="service-icon">⏱️</div>
+        <h3 data-i18n="service_hourly_title">Hourly Service</h3>
+        <p data-i18n="service_hourly_desc">
+          Your personal chauffeur at disposal for as many hours as needed.
+        </p>
+      </article>
 
-        <article class="service-item">
-          <div class="service-icon">⭐</div>
-          <h3>VIP & Celebrity Transport</h3>
-          <p>Maximum discretion, security and comfort for VIP clients.</p>
-        </article>
+      <article class="service-item">
+        <div class="service-icon">⭐</div>
+        <h3 data-i18n="service_vip_title">VIP & Celebrity Transport</h3>
+        <p data-i18n="service_vip_desc">
+          Maximum discretion, security and comfort for VIP clients.
+        </p>
+      </article>
 
-      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FLEET -->
-  <section id="fleet" class="section section-black">
-    <div class="container">
-      <h2 class="section-title">Our Fleet</h2>
 
-      <div class="fleet-grid">
+ <!-- FLEET -->
+<section id="fleet" class="section section-black">
+  <div class="container">
+    <h2 class="section-title" data-i18n="fleet_title">Our Fleet</h2>
 
-        <article class="fleet-item">
-          <div class="fleet-img-wrap">
-            <img src="assets/img/fleet/e-class.jpg" alt="Mercedes E-Class">
-          </div>
-          <h3>Mercedes E-Class</h3>
-          <p class="fleet-desc">The perfect balance between comfort and elegance.</p>
-          <p class="fleet-meta">3 passengers • 2 suitcases</p>
-        </article>
+    <div class="fleet-grid">
 
-        <article class="fleet-item">
-          <div class="fleet-img-wrap">
-            <img src="assets/img/fleet/s-class.jpg" alt="Mercedes S-Class">
-          </div>
-          <h3>Mercedes S-Class</h3>
-          <p class="fleet-desc">A flagship of luxury sedans with exceptional comfort.</p>
-          <p class="fleet-meta">3 passengers • 2 suitcases</p>
-        </article>
+      <!-- E-CLASS -->
+      <article class="fleet-item">
+        <div class="fleet-img-wrap">
+          <img src="assets/img/fleet/e-class.jpg" alt="Mercedes E-Class">
+        </div>
+        <h3 data-i18n="fleet_eclass_title">Mercedes E-Class</h3>
+        <p class="fleet-desc" data-i18n="fleet_eclass_desc">
+          The perfect balance between comfort and elegance.
+        </p>
+        <p class="fleet-meta" data-i18n="fleet_eclass_meta">
+          3 passengers • 2 suitcases
+        </p>
+      </article>
 
-        <article class="fleet-item">
-          <div class="fleet-img-wrap">
-            <img src="assets/img/fleet/maybach.jpg" alt="Mercedes Maybach">
-          </div>
-          <h3>Mercedes S-Class Maybach</h3>
-          <p class="fleet-desc">The ultimate VIP experience with unmatched prestige.</p>
-          <p class="fleet-meta">3 passengers • 2 suitcases</p>
-        </article>
+      <!-- S-CLASS -->
+      <article class="fleet-item">
+        <div class="fleet-img-wrap">
+          <img src="assets/img/fleet/s-class.jpg" alt="Mercedes S-Class">
+        </div>
+        <h3 data-i18n="fleet_sclass_title">Mercedes S-Class</h3>
+        <p class="fleet-desc" data-i18n="fleet_sclass_desc">
+          A flagship of luxury sedans with exceptional comfort.
+        </p>
+        <p class="fleet-meta" data-i18n="fleet_sclass_meta">
+          3 passengers • 2 suitcases
+        </p>
+      </article>
 
-        <article class="fleet-item">
-          <div class="fleet-img-wrap">
-            <img src="assets/img/fleet/v-class.jpg" alt="Mercedes V-Class">
-          </div>
-          <h3>Mercedes V-Class</h3>
-          <p class="fleet-desc">Spacious and luxurious for families and business groups.</p>
-          <p class="fleet-meta">7 passengers • 7 suitcases</p>
-        </article>
+      <!-- MAYBACH -->
+      <article class="fleet-item">
+        <div class="fleet-img-wrap">
+          <img src="assets/img/fleet/maybach.jpg" alt="Mercedes Maybach">
+        </div>
+        <h3 data-i18n="fleet_maybach_title">Mercedes S-Class Maybach</h3>
+        <p class="fleet-desc" data-i18n="fleet_maybach_desc">
+          The ultimate VIP experience with unmatched prestige.
+        </p>
+        <p class="fleet-meta" data-i18n="fleet_maybach_meta">
+          3 passengers • 2 suitcases
+        </p>
+      </article>
 
-        <article class="fleet-item">
-          <div class="fleet-img-wrap">
-            <img src="assets/img/fleet/sprinter.jpg" alt="Mercedes Sprinter VIP">
-          </div>
-          <h3>Mercedes Sprinter VIP</h3>
-          <p class="fleet-desc">Luxury minibus with lounge‑style seating.</p>
-          <p class="fleet-meta">16 passengers • 16 suitcases</p>
-        </article>
+      <!-- V-CLASS -->
+      <article class="fleet-item">
+        <div class="fleet-img-wrap">
+          <img src="assets/img/fleet/v-class.jpg" alt="Mercedes V-Class">
+        </div>
+        <h3 data-i18n="fleet_vclass_title">Mercedes V-Class</h3>
+        <p class="fleet-desc" data-i18n="fleet_vclass_desc">
+          Spacious and luxurious for families and business groups.
+        </p>
+        <p class="fleet-meta" data-i18n="fleet_vclass_meta">
+          7 passengers • 7 suitcases
+        </p>
+      </article>
 
-        <article class="fleet-item">
-          <div class="fleet-img-wrap">
-            <img src="assets/img/fleet/gls.jpg" alt="Mercedes GLS">
-          </div>
-          <h3>Mercedes GLS</h3>
-          <p class="fleet-desc">Premium SUV combining power, comfort and elegance.</p>
-          <p class="fleet-meta">4 passengers • 4 suitcases</p>
-        </article>
+      <!-- SPRINTER -->
+      <article class="fleet-item">
+        <div class="fleet-img-wrap">
+          <img src="assets/img/fleet/sprinter.jpg" alt="Mercedes Sprinter VIP">
+        </div>
+        <h3 data-i18n="fleet_sprinter_title">Mercedes Sprinter VIP</h3>
+        <p class="fleet-desc" data-i18n="fleet_sprinter_desc">
+          Luxury minibus with lounge‑style seating.
+        </p>
+        <p class="fleet-meta" data-i18n="fleet_sprinter_meta">
+          16 passengers • 16 suitcases
+        </p>
+      </article>
 
-      </div>
+      <!-- GLS -->
+      <article class="fleet-item">
+        <div class="fleet-img-wrap">
+          <img src="assets/img/fleet/gls.jpg" alt="Mercedes GLS">
+        </div>
+        <h3 data-i18n="fleet_gls_title">Mercedes GLS</h3>
+        <p class="fleet-desc" data-i18n="fleet_gls_desc">
+          Premium SUV combining power, comfort and elegance.
+        </p>
+        <p class="fleet-meta" data-i18n="fleet_gls_meta">
+          4 passengers • 4 suitcases
+        </p>
+      </article>
+
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- BOOKING -->
-  <section id="booking" class="section section-dark">
-    <div class="container">
-      <h2 class="section-title">Booking</h2>
-      <form class="booking-form">
-        <div class="form-row">
-          <input type="text" placeholder="Pickup location">
-          <input type="text" placeholder="Drop-off location">
-        </div>
-        <div class="form-row">
-          <input type="date">
-          <input type="time">
-        </div>
-        <div class="form-row">
-          <select>
-            <option>Vehicle type</option>
-            <option>E-Class</option>
-            <option>S-Class</option>
-            <option>Maybach</option>
-            <option>V-Class</option>
-            <option>Sprinter VIP</option>
-          </select>
-          <input type="number" placeholder="Passengers">
-        </div>
-        <button type="submit" class="btn btn-primary full-width">Request a quote</button>
-      </form>
-    </div>
-  </section>
+<section id="booking" class="section section-dark">
+  <div class="container">
+    <h2 class="section-title" data-i18n="booking_title">Booking</h2>
+
+    <form class="booking-form" id="bookingForm">
+
+      <div class="form-row">
+        <input id="pickup" name="pickup" type="text"
+               placeholder="Pickup location"
+               data-i18n-placeholder="pickup_placeholder" required>
+
+        <input id="dropoff" name="dropoff" type="text"
+               placeholder="Drop-off location"
+               data-i18n-placeholder="dropoff_placeholder" required>
+      </div>
+
+      <div class="form-row">
+        <input id="date" name="date" type="date"
+               data-i18n-placeholder="date_placeholder" required>
+
+        <input id="time" name="time" type="time"
+               data-i18n-placeholder="time_placeholder" required>
+      </div>
+
+      <div class="form-row">
+        <select id="vehicle" name="vehicle" required data-i18n="vehicle_type">
+          <option value="" disabled selected data-i18n="vehicle_type">Vehicle type</option>
+          <option>E-Class</option>
+          <option>S-Class</option>
+          <option>Maybach</option>
+          <option>V-Class</option>
+          <option>Sprinter VIP</option>
+        </select>
+
+        <input id="passengers" name="passengers" type="number"
+               placeholder="Passengers"
+               data-i18n-placeholder="passengers" required>
+      </div>
+
+      <button type="button" id="sendWhatsApp"
+              class="btn btn-primary full-width"
+              data-i18n="request_quote">
+        Request a quote
+      </button>
+
+    </form>
+  </div>
+</section>
 
   <!-- CONTACT -->
   <section id="contact" class="section section-black">
-    <div class="container">
-      <h2 class="section-title">Contact</h2>
+  <div class="container">
+    <h2 class="section-title" data-i18n="contact_title">Contact</h2>
 
-      <div class="contact-grid">
-        <div class="contact-info">
-          <h3>Get in Touch</h3>
-          <p>We are available 24/7 for bookings and inquiries.</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3 data-i18n="contact_get_in_touch">Get in Touch</h3>
+        <p data-i18n="contact_available">We are available 24/7 for bookings and inquiries.</p>
 
-          <p><strong>Phone:</strong> <a href="tel:+33600000000">+33 6 00 00 00 00</a></p>
-          <p><strong>WhatsApp:</strong> <a href="https://wa.me/33600000000" target="_blank">Chat on WhatsApp</a> </p>
-          <p><strong>Email:</strong> <a href="mailto:info@example.com">info@example.com</a></p>
-          <p><strong>Address:</strong> Nice, Côte d’Azur, France</p>
+        <p><strong data-i18n="contact_phone">Phone:</strong>
+          <a href="tel:+33600000000">+33 6 00 00 00 00</a></p>
+
+        <p><strong data-i18n="contact_whatsapp">WhatsApp:</strong>
+          <a href="https://wa.me/33600000000" target="_blank" data-i18n="contact_whatsapp_chat">
+            Chat on WhatsApp
+          </a>
+        </p>
+
+        <p><strong data-i18n="contact_email">Email:</strong>
+          <a href="mailto:info@example.com">info@example.com</a></p>
+
+        <p><strong data-i18n="contact_address">Address:</strong>
+          Nice, Côte d’Azur, France</p>
+      </div>
+
+      <form class="booking-form contact-form">
+        <div class="form-row">
+          <input type="text" placeholder="Your Name" data-i18n-placeholder="your_name">
+          <input type="email" placeholder="Email" data-i18n-placeholder="your_email">
         </div>
 
-        <form class="booking-form contact-form">
-          <div class="form-row">
-            <input type="text" placeholder="Your Name">
-            <input type="email" placeholder="Email">
-          </div>
-          <div class="form-row">
-            <input type="tel" placeholder="Phone">
-          </div>
-          <textarea rows="5" placeholder="Your Message"></textarea>
-          <button class="btn btn-primary full-width">Send Message</button>
-        </form>
-      </div>
-    </div>
-  </section>
+        <div class="form-row">
+          <input type="tel" placeholder="Phone" data-i18n-placeholder="your_phone">
+        </div>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer-inner">
+        <textarea rows="5" placeholder="Your Message" data-i18n-placeholder="your_message"></textarea>
+
+        <button class="btn btn-primary full-width" data-i18n="send_message">
+          Send Message
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-inner">
+
+    <div class="footer-left">
       <div class="logo">LUX<span>DRIVE</span></div>
       <p>© 2026 Luxury Chauffeur Service. All rights reserved.</p>
     </div>
-  </footer>
 
-  <!-- JS -->
-  <script src="assets/js/slider.js"></script>
+    <div class="footer-social">
 
+      <!-- Instagram -->
+      <a href="https://instagram.com/YOUR_INSTAGRAM" target="_blank" class="social-icon">
+        <svg viewBox="0 0 24 24"><path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.8-.9a1.1 1.1 0 11-2.2 0 1.1 1.1 0 012.2 0z"/></svg>
+      </a>
+
+     <!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-inner">
+
+    <div class="footer-left">
+      <div class="logo">LUX<span>DRIVE</span></div>
+      <p>© 2026 Luxury Chauffeur Service. All rights reserved.</p>
+    </div>
+
+    <div class="footer-social">
+
+      <!-- Instagram -->
+      <a href="https://instagram.com/YOUR_INSTAGRAM" target="_blank" class="social-icon">
+        <svg viewBox="0 0 24 24"><path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.8-.9a1.1 1.1 0 11-2.2 0 1.1 1.1 0 012.2 0z"/></svg>
+      </a>
+
+      <!-- Facebook -->
+      <a href="https://facebook.com/YOUR_FACEBOOK" target="_blank" class="social-icon">
+        <svg viewBox="0 0 24 24"><path d="M13 3h4V0h-4c-3.3 0-6 2.7-6 6v3H4v4h3v11h4V13h3.1l.9-4H11V6c0-1.1.9-2 2-2z"/></svg>
+      </a>
+
+      <!-- WhatsApp -->
+      <a href="https://wa.me/YOUR_NUMBER" target="_blank" class="social-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.7 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2zm0 18a8 8 0 01-4.2-1.2l-.3-.2-2.8.8.8-2.7-.2-.3A8 8 0 1112 20zm4.3-5.7c-.2-.1-1.3-.6-1.5-.7-.2-.1-.4-.1-.6.1-.2.3-.7.8-.9 1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.8-1.6-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.4.1-.1.2-.3.3-.4.1-.1.1-.3 0-.5-.1-.1-.6-1.5-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2 0 1.3.9 2.6 1 2.8.1.2 1.8 3 4.4 4.2 2.6 1.2 2.6.8 3.1.8.5 0 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2 0-.1-.1-.2-.3-.3z"/></svg>
+      </a>
+
+      <!-- LinkedIn -->
+      <a href="https://linkedin.com/YOUR_LINKEDIN" target="_blank" class="social-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7.5 0h3.8v2.2h.1c.5-.9 1.8-2.2 4-2.2 4.3 0 5.1 2.8 5.1 6.5V24h-4v-8.2c0-2-.1-4.6-2.8-4.6-2.8 0-3.2 2.2-3.2 4.4V24h-4V8z"/>
+        </svg>
+      </a>
+
+      <!-- TikTok -->
+      <a href="https://tiktok.com/@YOUR_TIKTOK" target="_blank" class="social-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M12.7 2h3.3c.1 1.2.6 2.3 1.4 3.2.8.9 1.9 1.4 3.1 1.5v3.3c-1.7 0-3.3-.5-4.7-1.5v7.7c0 4-3.3 7.3-7.3 7.3S1.2 20.2 1.2 16.2s3.3-7.3 7.3-7.3c.5 0 1 .1 1.5.2v3.4c-.5-.2-1-.3-1.5-.3-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4V2z"/>
+        </svg>
+      </a>
+
+    </div>
+
+  </div>
+</footer>
+
+<!-- JS -->
+<script src="assets/js/lang.js"></script>
+<script src="assets/js/slider.js"></script>
+<script src="assets/js/booking.js"></script>
+<script src="assets/js/menu.js"></script>
 </body>
 </html>
