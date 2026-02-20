@@ -207,6 +207,7 @@ body {
   height: 1px;
   background: var(--gold);
 }
+
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -402,7 +403,7 @@ body {
   font-size: 14px;
   padding: 0 16px;
   line-height: 1.45;
-  min-height: 60px; /* чтобы все карточки были ровные */
+  min-height: 60px;
 }
 
 .fleet-meta {
@@ -604,6 +605,7 @@ body {
   30% { opacity: 1; }
   100% { left: 140%; opacity: 0; }
 }
+
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -650,6 +652,7 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 /* CONTACT PHONE GOLD */
 #contact a[href^="tel"] {
   color: var(--gold) !important;
@@ -659,6 +662,7 @@ body {
 #contact a[href^="tel"]:hover {
   color: #f7e7a1 !important;
 }
+
 /* CONTACT EMAIL GOLD */
 #contact a[href^="mailto"] {
   color: var(--gold) !important;
@@ -668,6 +672,7 @@ body {
 #contact a[href^="mailto"]:hover {
   color: #f7e7a1 !important;
 }
+
 /* CONTACT — MOBILE ADAPTATION */
 @media (max-width: 900px) {
   .contact-grid {
@@ -712,6 +717,7 @@ body {
     min-height: 140px;
   }
 }
+
 /* HERO MOBILE FIX */
 @media (max-width: 768px) {
   .hero-title {
@@ -728,6 +734,7 @@ body {
     gap: 12px;
   }
 }
+
 /* BURGER BUTTON */
 .burger {
   display: none;
@@ -771,6 +778,7 @@ body {
     display: flex;
   }
 }
+
 /* CONTACT WHATSAPP GOLD */
 #contact a[href*="wa.me"] {
   color: var(--gold) !important;
@@ -779,4 +787,123 @@ body {
 
 #contact a[href*="wa.me"]:hover {
   color: #f7e7a1 !important;
+}
+
+/* LANG SWITCH */
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 20px;
+  font-weight: 500;
+}
+
+.lang-btn {
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.2s ease;
+}
+
+.lang-btn:hover {
+  opacity: 1;
+}
+
+.lang-btn.active {
+  opacity: 1;
+  color: #d4af37;
+}
+
+.lang-sep {
+  opacity: 0.5;
+}
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 20px;
+  font-weight: 500;
+}
+
+.lang-btn {
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.2s ease;
+  font-size: 14px;
+}
+
+.lang-btn:hover {
+  opacity: 1;
+}
+
+.lang-btn.active {
+  opacity: 1;
+  color: #d4af37;
+}
+
+.lang-sep {
+  opacity: 0.5;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-social {
+  display: flex;
+  gap: 18px;
+}
+
+.social-icon svg {
+  width: 26px;
+  height: 26px;
+  fill: #ffffff;
+  transition: 0.3s;
+}
+
+.social-icon:hover svg {
+  fill: #d4af37;
+  transform: scale(1.15);
+}
+
+/* MOBILE NAV (SECOND VERSION) */
+@media (max-width: 768px) {
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: #000;
+    padding: 80px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: 0.3s ease;
+    z-index: 999;
+  }
+
+  .nav.active {
+    right: 0;
+  }
+
+  .burger {
+    display: block;
+    cursor: pointer;
+    z-index: 1000;
+  }
+
+  .burger.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+  }
+
+  .burger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .burger.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+  }
 }
